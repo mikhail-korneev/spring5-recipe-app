@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Hello Spring Boot</title>
+    <title>Recipe Home</title>
 </head>
 <body>
-    <h1>Hello Spring Boot!</h1>
+<h1>My Recipes!</h1>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Description</th>
+    </tr>
+    <tr th:each="recipe : ${recipes}">
+        <th th:text="${recipe.id}">123</th>
+        <th th:text="${recipe.description}">Tasty Goodness</th>
+    </tr>
+</table>
 </body>
 </html>
